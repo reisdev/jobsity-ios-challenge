@@ -84,6 +84,10 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: Implement select show action
+        
+        let show = shows[indexPath.row]
+        let controller = ShowViewController(show: show)
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

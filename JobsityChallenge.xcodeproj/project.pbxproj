@@ -25,6 +25,9 @@
 		CEBB0823296F0C3300B025FA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0822296F0C3300B025FA /* HomeView.swift */; };
 		CEBB0825296F0D2000B025FA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0824296F0D2000B025FA /* HomeViewController.swift */; };
 		CEBB0828296F0EE600B025FA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CEBB0827296F0EE600B025FA /* Kingfisher */; };
+		CEBB082B296F73A300B025FA /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB082A296F73A300B025FA /* ShowView.swift */; };
+		CEBB082D296F73AD00B025FA /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB082C296F73AD00B025FA /* ShowViewController.swift */; };
+		CEBB0830296F7DD900B025FA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB082F296F7DD900B025FA /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		CEBB0820296F0B1400B025FA /* ShowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEBB0822296F0C3300B025FA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CEBB0824296F0D2000B025FA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CEBB082A296F73A300B025FA /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
+		CEBB082C296F73AD00B025FA /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		CEBB082F296F7DD900B025FA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +87,10 @@
 			isa = PBXGroup;
 			children = (
 				CEBB0829296F408E00B025FA /* Core */,
+				CEBB0804296ED58E00B025FA /* Domain */,
+				CEBB082E296F7DC900B025FA /* Extensions */,
 				CEBB081A296EE39F00B025FA /* Resources */,
 				CEBB0808296ED60800B025FA /* UI */,
-				CEBB0804296ED58E00B025FA /* Domain */,
 				CEBB07F6296ED3D500B025FA /* JobsityChallenge.xcdatamodeld */,
 			);
 			path = JobsityChallenge;
@@ -125,7 +132,7 @@
 			children = (
 				CEBB081F296F0AFF00B025FA /* Components */,
 				CEBB080B296ED6A200B025FA /* Person */,
-				CEBB080A296ED62D00B025FA /* Series */,
+				CEBB080A296ED62D00B025FA /* Show */,
 				CEBB0809296ED61600B025FA /* Home */,
 			);
 			path = UI;
@@ -140,11 +147,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		CEBB080A296ED62D00B025FA /* Series */ = {
+		CEBB080A296ED62D00B025FA /* Show */ = {
 			isa = PBXGroup;
 			children = (
+				CEBB082A296F73A300B025FA /* ShowView.swift */,
+				CEBB082C296F73AD00B025FA /* ShowViewController.swift */,
 			);
-			path = Series;
+			path = Show;
 			sourceTree = "<group>";
 		};
 		CEBB080B296ED6A200B025FA /* Person */ = {
@@ -180,6 +189,14 @@
 				CEBB07EF296ED3D500B025FA /* SceneDelegate.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		CEBB082E296F7DC900B025FA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB082F296F7DD900B025FA /* StringExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +279,10 @@
 				CEBB0819296EDDF600B025FA /* ShowService.swift in Sources */,
 				CEBB0823296F0C3300B025FA /* HomeView.swift in Sources */,
 				CEBB080F296ED88100B025FA /* Series.swift in Sources */,
+				CEBB082D296F73AD00B025FA /* ShowViewController.swift in Sources */,
 				CEBB0813296EDB7000B025FA /* Episode.swift in Sources */,
 				CEBB080D296ED6DB00B025FA /* Network.swift in Sources */,
+				CEBB082B296F73A300B025FA /* ShowView.swift in Sources */,
 				CEBB0825296F0D2000B025FA /* HomeViewController.swift in Sources */,
 				CEBB0821296F0B1400B025FA /* ShowCollectionViewCell.swift in Sources */,
 				CEBB07F8296ED3D500B025FA /* JobsityChallenge.xcdatamodeld in Sources */,
@@ -271,6 +290,7 @@
 				CEBB0811296ED89B00B025FA /* Show.swift in Sources */,
 				CEBB0815296EDC5100B025FA /* Person.swift in Sources */,
 				CEBB07EE296ED3D500B025FA /* AppDelegate.swift in Sources */,
+				CEBB0830296F7DD900B025FA /* StringExtension.swift in Sources */,
 				CEBB07F0296ED3D500B025FA /* SceneDelegate.swift in Sources */,
 				CEBB0817296EDD9400B025FA /* Image.swift in Sources */,
 			);
