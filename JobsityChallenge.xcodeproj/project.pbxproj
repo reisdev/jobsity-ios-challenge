@@ -10,10 +10,22 @@
 		CEBB07EE296ED3D500B025FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB07ED296ED3D500B025FA /* AppDelegate.swift */; };
 		CEBB07F0296ED3D500B025FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB07EF296ED3D500B025FA /* SceneDelegate.swift */; };
 		CEBB07F2296ED3D500B025FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB07F1296ED3D500B025FA /* ViewController.swift */; };
-		CEBB07F5296ED3D500B025FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBB07F3296ED3D500B025FA /* Main.storyboard */; };
 		CEBB07F8296ED3D500B025FA /* JobsityChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEBB07F6296ED3D500B025FA /* JobsityChallenge.xcdatamodeld */; };
 		CEBB07FA296ED3D900B025FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBB07F9296ED3D900B025FA /* Assets.xcassets */; };
 		CEBB07FD296ED3D900B025FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBB07FB296ED3D900B025FA /* LaunchScreen.storyboard */; };
+		CEBB080D296ED6DB00B025FA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB080C296ED6DB00B025FA /* Network.swift */; };
+		CEBB080F296ED88100B025FA /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB080E296ED88100B025FA /* Series.swift */; };
+		CEBB0811296ED89B00B025FA /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0810296ED89B00B025FA /* Show.swift */; };
+		CEBB0813296EDB7000B025FA /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0812296EDB7000B025FA /* Episode.swift */; };
+		CEBB0815296EDC5100B025FA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0814296EDC5100B025FA /* Person.swift */; };
+		CEBB0817296EDD9400B025FA /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0816296EDD9400B025FA /* Image.swift */; };
+		CEBB0819296EDDF600B025FA /* ShowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0818296EDDF600B025FA /* ShowService.swift */; };
+		CEBB081C296EE46300B025FA /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB081B296EE46300B025FA /* Settings.swift */; };
+		CEBB081E296EE4EA00B025FA /* TVMaze.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBB081D296EE4EA00B025FA /* TVMaze.plist */; };
+		CEBB0821296F0B1400B025FA /* ShowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0820296F0B1400B025FA /* ShowCollectionViewCell.swift */; };
+		CEBB0823296F0C3300B025FA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0822296F0C3300B025FA /* HomeView.swift */; };
+		CEBB0825296F0D2000B025FA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0824296F0D2000B025FA /* HomeViewController.swift */; };
+		CEBB0828296F0EE600B025FA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CEBB0827296F0EE600B025FA /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +33,22 @@
 		CEBB07ED296ED3D500B025FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBB07EF296ED3D500B025FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CEBB07F1296ED3D500B025FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CEBB07F4296ED3D500B025FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEBB07F7296ED3D500B025FA /* JobsityChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JobsityChallenge.xcdatamodel; sourceTree = "<group>"; };
 		CEBB07F9296ED3D900B025FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEBB07FC296ED3D900B025FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEBB07FE296ED3D900B025FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEBB080C296ED6DB00B025FA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		CEBB080E296ED88100B025FA /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
+		CEBB0810296ED89B00B025FA /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
+		CEBB0812296EDB7000B025FA /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		CEBB0814296EDC5100B025FA /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		CEBB0816296EDD9400B025FA /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		CEBB0818296EDDF600B025FA /* ShowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowService.swift; sourceTree = "<group>"; };
+		CEBB081B296EE46300B025FA /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		CEBB081D296EE4EA00B025FA /* TVMaze.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TVMaze.plist; sourceTree = "<group>"; };
+		CEBB0820296F0B1400B025FA /* ShowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEBB0822296F0C3300B025FA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CEBB0824296F0D2000B025FA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBB0828296F0EE600B025FA /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +82,99 @@
 		CEBB07EC296ED3D500B025FA /* JobsityChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				CEBB081A296EE39F00B025FA /* Resources */,
+				CEBB0808296ED60800B025FA /* UI */,
+				CEBB0804296ED58E00B025FA /* Domain */,
 				CEBB07ED296ED3D500B025FA /* AppDelegate.swift */,
 				CEBB07EF296ED3D500B025FA /* SceneDelegate.swift */,
 				CEBB07F1296ED3D500B025FA /* ViewController.swift */,
-				CEBB07F3296ED3D500B025FA /* Main.storyboard */,
-				CEBB07F9296ED3D900B025FA /* Assets.xcassets */,
-				CEBB07FB296ED3D900B025FA /* LaunchScreen.storyboard */,
-				CEBB07FE296ED3D900B025FA /* Info.plist */,
 				CEBB07F6296ED3D500B025FA /* JobsityChallenge.xcdatamodeld */,
 			);
 			path = JobsityChallenge;
+			sourceTree = "<group>";
+		};
+		CEBB0804296ED58E00B025FA /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB0807296ED5B600B025FA /* Services */,
+				CEBB0805296ED59C00B025FA /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CEBB0805296ED59C00B025FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB080E296ED88100B025FA /* Series.swift */,
+				CEBB0810296ED89B00B025FA /* Show.swift */,
+				CEBB0812296EDB7000B025FA /* Episode.swift */,
+				CEBB0814296EDC5100B025FA /* Person.swift */,
+				CEBB0816296EDD9400B025FA /* Image.swift */,
+				CEBB081B296EE46300B025FA /* Settings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEBB0807296ED5B600B025FA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB080C296ED6DB00B025FA /* Network.swift */,
+				CEBB0818296EDDF600B025FA /* ShowService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CEBB0808296ED60800B025FA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB081F296F0AFF00B025FA /* Components */,
+				CEBB080B296ED6A200B025FA /* Person */,
+				CEBB080A296ED62D00B025FA /* Series */,
+				CEBB0809296ED61600B025FA /* Home */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CEBB0809296ED61600B025FA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB0822296F0C3300B025FA /* HomeView.swift */,
+				CEBB0824296F0D2000B025FA /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CEBB080A296ED62D00B025FA /* Series */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Series;
+			sourceTree = "<group>";
+		};
+		CEBB080B296ED6A200B025FA /* Person */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		CEBB081A296EE39F00B025FA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB07FE296ED3D900B025FA /* Info.plist */,
+				CEBB07FB296ED3D900B025FA /* LaunchScreen.storyboard */,
+				CEBB07F9296ED3D900B025FA /* Assets.xcassets */,
+				CEBB081D296EE4EA00B025FA /* TVMaze.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CEBB081F296F0AFF00B025FA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB0820296F0B1400B025FA /* ShowCollectionViewCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +193,9 @@
 			dependencies = (
 			);
 			name = JobsityChallenge;
+			packageProductDependencies = (
+				CEBB0827296F0EE600B025FA /* Kingfisher */,
+			);
 			productName = JobsityChallenge;
 			productReference = CEBB07EA296ED3D500B025FA /* JobsityChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +224,9 @@
 				Base,
 			);
 			mainGroup = CEBB07E1296ED3D500B025FA;
+			packageReferences = (
+				CEBB0826296F0EE600B025FA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = CEBB07EB296ED3D500B025FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,9 +241,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBB081E296EE4EA00B025FA /* TVMaze.plist in Resources */,
 				CEBB07FD296ED3D900B025FA /* LaunchScreen.storyboard in Resources */,
 				CEBB07FA296ED3D900B025FA /* Assets.xcassets in Resources */,
-				CEBB07F5296ED3D500B025FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +254,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBB0819296EDDF600B025FA /* ShowService.swift in Sources */,
+				CEBB0823296F0C3300B025FA /* HomeView.swift in Sources */,
+				CEBB080F296ED88100B025FA /* Series.swift in Sources */,
+				CEBB0813296EDB7000B025FA /* Episode.swift in Sources */,
+				CEBB080D296ED6DB00B025FA /* Network.swift in Sources */,
+				CEBB0825296F0D2000B025FA /* HomeViewController.swift in Sources */,
+				CEBB0821296F0B1400B025FA /* ShowCollectionViewCell.swift in Sources */,
 				CEBB07F8296ED3D500B025FA /* JobsityChallenge.xcdatamodeld in Sources */,
 				CEBB07F2296ED3D500B025FA /* ViewController.swift in Sources */,
+				CEBB081C296EE46300B025FA /* Settings.swift in Sources */,
+				CEBB0811296ED89B00B025FA /* Show.swift in Sources */,
+				CEBB0815296EDC5100B025FA /* Person.swift in Sources */,
 				CEBB07EE296ED3D500B025FA /* AppDelegate.swift in Sources */,
 				CEBB07F0296ED3D500B025FA /* SceneDelegate.swift in Sources */,
+				CEBB0817296EDD9400B025FA /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CEBB07F3296ED3D500B025FA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEBB07F4296ED3D500B025FA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CEBB07FB296ED3D900B025FA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -293,10 +409,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VK9JADUS66;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = JobsityChallenge/Info.plist;
+				INFOPLIST_FILE = JobsityChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,10 +436,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VK9JADUS66;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = JobsityChallenge/Info.plist;
+				INFOPLIST_FILE = JobsityChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -362,6 +476,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEBB0826296F0EE600B025FA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEBB0827296F0EE600B025FA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEBB0826296F0EE600B025FA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CEBB07F6296ED3D500B025FA /* JobsityChallenge.xcdatamodeld */ = {
