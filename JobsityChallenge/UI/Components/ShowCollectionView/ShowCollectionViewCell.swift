@@ -11,6 +11,17 @@ import UIKit
 
 final class ShowCollectionViewCell: UICollectionViewCell {
     
+    private lazy var nameLabel: UILabel  = {
+        let label = UILabel()
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 12.0)
+        label.numberOfLines = 0
+        label.textColor = .white
+        
+        return label
+    }()
+    
     private lazy var posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -32,16 +43,24 @@ final class ShowCollectionViewCell: UICollectionViewCell {
     
     private func setupSubviews() {
         contentView.addSubview(posterImageView)
+        contentView.addSubview(nameLabel)
         
         NSLayoutConstraint.activate([
             posterImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             posterImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            posterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            posterImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+            posterImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            posterImageView.heightAnchor.constraint(equalToConstant: 240.0),
+            
+            nameLabel.topAnchor.constraint(equalTo: posterImageView.bottomAnchor, constant: 8.0),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4.0),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4.0),
+            nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ])
     }
     
     public func setup(with show: Show) {
+        nameLabel.text = show.name
+        
         posterImageView.kf.setImage(with: URL(string: show.image.medium))
     }
     

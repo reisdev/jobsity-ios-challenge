@@ -1,22 +1,26 @@
 //
-//  HomeView.swift
+//  SearchView.swift
 //  JobsityChallenge
 //
-//  Created by Matheus dos Reis de Jesus on 11/01/23.
+//  Created by Matheus dos Reis de Jesus on 14/01/23.
 //
 
 import Foundation
 import UIKit
 
-final class HomeView: UIView {
+final class SearchView: UIView {
+    
+    lazy var searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        return searchController
+    }()
     
     lazy var showsCollectionView: ShowsCollectionView = {
-        
         var flowLayout = UICollectionViewFlowLayout()
-            
+        
         flowLayout.minimumInteritemSpacing = 4.0
         flowLayout.minimumLineSpacing = 8.0
-            
+        
         let collectionView = ShowsCollectionView(flowLayout: flowLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear

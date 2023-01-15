@@ -13,7 +13,7 @@
 		CEBB07FA296ED3D900B025FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBB07F9296ED3D900B025FA /* Assets.xcassets */; };
 		CEBB07FD296ED3D900B025FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBB07FB296ED3D900B025FA /* LaunchScreen.storyboard */; };
 		CEBB080D296ED6DB00B025FA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB080C296ED6DB00B025FA /* Network.swift */; };
-		CEBB080F296ED88100B025FA /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB080E296ED88100B025FA /* Series.swift */; };
+		CEBB080F296ED88100B025FA /* Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB080E296ED88100B025FA /* Serie.swift */; };
 		CEBB0811296ED89B00B025FA /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0810296ED89B00B025FA /* Show.swift */; };
 		CEBB0813296EDB7000B025FA /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0812296EDB7000B025FA /* Episode.swift */; };
 		CEBB0815296EDC5100B025FA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0814296EDC5100B025FA /* Person.swift */; };
@@ -28,6 +28,13 @@
 		CEBB082B296F73A300B025FA /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB082A296F73A300B025FA /* ShowView.swift */; };
 		CEBB082D296F73AD00B025FA /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB082C296F73AD00B025FA /* ShowViewController.swift */; };
 		CEBB0830296F7DD900B025FA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB082F296F7DD900B025FA /* StringExtension.swift */; };
+		CEBB0832297042D400B025FA /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0831297042D400B025FA /* GenreCollectionViewCell.swift */; };
+		CEBB083829736BD600B025FA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB083729736BD600B025FA /* HomeViewModel.swift */; };
+		CEBB083D2973888300B025FA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB083C2973888300B025FA /* SearchViewController.swift */; };
+		CEBB083F2973889000B025FA /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB083E2973889000B025FA /* SearchViewModel.swift */; };
+		CEBB08412973889900B025FA /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB08402973889900B025FA /* SearchView.swift */; };
+		CEBB0843297388FD00B025FA /* ShowsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0842297388FD00B025FA /* ShowsCollectionView.swift */; };
+		CEBB08452973933B00B025FA /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB08442973933B00B025FA /* SearchService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +46,7 @@
 		CEBB07FC296ED3D900B025FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEBB07FE296ED3D900B025FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEBB080C296ED6DB00B025FA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		CEBB080E296ED88100B025FA /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
+		CEBB080E296ED88100B025FA /* Serie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serie.swift; sourceTree = "<group>"; };
 		CEBB0810296ED89B00B025FA /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		CEBB0812296EDB7000B025FA /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		CEBB0814296EDC5100B025FA /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -53,6 +60,13 @@
 		CEBB082A296F73A300B025FA /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
 		CEBB082C296F73AD00B025FA /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		CEBB082F296F7DD900B025FA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		CEBB0831297042D400B025FA /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEBB083729736BD600B025FA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CEBB083C2973888300B025FA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CEBB083E2973889000B025FA /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		CEBB08402973889900B025FA /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		CEBB0842297388FD00B025FA /* ShowsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsCollectionView.swift; sourceTree = "<group>"; };
+		CEBB08442973933B00B025FA /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +102,7 @@
 			children = (
 				CEBB0829296F408E00B025FA /* Core */,
 				CEBB0804296ED58E00B025FA /* Domain */,
+				CEBB0807296ED5B600B025FA /* Service */,
 				CEBB082E296F7DC900B025FA /* Extensions */,
 				CEBB081A296EE39F00B025FA /* Resources */,
 				CEBB0808296ED60800B025FA /* UI */,
@@ -99,7 +114,6 @@
 		CEBB0804296ED58E00B025FA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				CEBB0807296ED5B600B025FA /* Services */,
 				CEBB0805296ED59C00B025FA /* Models */,
 			);
 			path = Domain;
@@ -108,7 +122,7 @@
 		CEBB0805296ED59C00B025FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CEBB080E296ED88100B025FA /* Series.swift */,
+				CEBB080E296ED88100B025FA /* Serie.swift */,
 				CEBB0810296ED89B00B025FA /* Show.swift */,
 				CEBB0812296EDB7000B025FA /* Episode.swift */,
 				CEBB0814296EDC5100B025FA /* Person.swift */,
@@ -118,18 +132,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CEBB0807296ED5B600B025FA /* Services */ = {
+		CEBB0807296ED5B600B025FA /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				CEBB080C296ED6DB00B025FA /* Network.swift */,
 				CEBB0818296EDDF600B025FA /* ShowService.swift */,
+				CEBB08442973933B00B025FA /* SearchService.swift */,
 			);
-			path = Services;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		CEBB0808296ED60800B025FA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CEBB083B2973887200B025FA /* Search */,
 				CEBB081F296F0AFF00B025FA /* Components */,
 				CEBB080B296ED6A200B025FA /* Person */,
 				CEBB080A296ED62D00B025FA /* Show */,
@@ -143,6 +159,7 @@
 			children = (
 				CEBB0822296F0C3300B025FA /* HomeView.swift */,
 				CEBB0824296F0D2000B025FA /* HomeViewController.swift */,
+				CEBB083729736BD600B025FA /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -177,7 +194,8 @@
 		CEBB081F296F0AFF00B025FA /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CEBB0820296F0B1400B025FA /* ShowCollectionViewCell.swift */,
+				CEBB0846297396B100B025FA /* ShowCollectionView */,
+				CEBB0831297042D400B025FA /* GenreCollectionViewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -197,6 +215,25 @@
 				CEBB082F296F7DD900B025FA /* StringExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CEBB083B2973887200B025FA /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB083C2973888300B025FA /* SearchViewController.swift */,
+				CEBB083E2973889000B025FA /* SearchViewModel.swift */,
+				CEBB08402973889900B025FA /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CEBB0846297396B100B025FA /* ShowCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB0820296F0B1400B025FA /* ShowCollectionViewCell.swift */,
+				CEBB0842297388FD00B025FA /* ShowsCollectionView.swift */,
+			);
+			path = ShowCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,9 +313,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBB083F2973889000B025FA /* SearchViewModel.swift in Sources */,
+				CEBB083829736BD600B025FA /* HomeViewModel.swift in Sources */,
 				CEBB0819296EDDF600B025FA /* ShowService.swift in Sources */,
 				CEBB0823296F0C3300B025FA /* HomeView.swift in Sources */,
-				CEBB080F296ED88100B025FA /* Series.swift in Sources */,
+				CEBB080F296ED88100B025FA /* Serie.swift in Sources */,
 				CEBB082D296F73AD00B025FA /* ShowViewController.swift in Sources */,
 				CEBB0813296EDB7000B025FA /* Episode.swift in Sources */,
 				CEBB080D296ED6DB00B025FA /* Network.swift in Sources */,
@@ -287,11 +326,16 @@
 				CEBB0821296F0B1400B025FA /* ShowCollectionViewCell.swift in Sources */,
 				CEBB07F8296ED3D500B025FA /* JobsityChallenge.xcdatamodeld in Sources */,
 				CEBB081C296EE46300B025FA /* Settings.swift in Sources */,
+				CEBB08412973889900B025FA /* SearchView.swift in Sources */,
 				CEBB0811296ED89B00B025FA /* Show.swift in Sources */,
+				CEBB0843297388FD00B025FA /* ShowsCollectionView.swift in Sources */,
 				CEBB0815296EDC5100B025FA /* Person.swift in Sources */,
 				CEBB07EE296ED3D500B025FA /* AppDelegate.swift in Sources */,
+				CEBB083D2973888300B025FA /* SearchViewController.swift in Sources */,
 				CEBB0830296F7DD900B025FA /* StringExtension.swift in Sources */,
 				CEBB07F0296ED3D500B025FA /* SceneDelegate.swift in Sources */,
+				CEBB08452973933B00B025FA /* SearchService.swift in Sources */,
+				CEBB0832297042D400B025FA /* GenreCollectionViewCell.swift in Sources */,
 				CEBB0817296EDD9400B025FA /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +480,7 @@
 				INFOPLIST_FILE = JobsityChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -463,6 +508,7 @@
 				INFOPLIST_FILE = JobsityChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

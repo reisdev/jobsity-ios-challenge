@@ -19,9 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: scene)
         
-        let controller = HomeViewController()
+        let service = ShowService(network: Network())
+        let viewModel = HomeViewModel(service: service)
+        let controller = HomeViewController(viewModel: viewModel)
         
         window.rootViewController = UINavigationController(rootViewController: controller)
+        
         window.makeKeyAndVisible()
         
         self.window = window

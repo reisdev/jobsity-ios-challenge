@@ -12,7 +12,7 @@ final class ShowViewController: UIViewController {
     
     private lazy var showView: ShowView = {
         let showView = ShowView()
-        
+        showView.genreCollectionView.dataSource = self
         return showView
     }()
     
@@ -36,5 +36,24 @@ final class ShowViewController: UIViewController {
         super.viewDidLoad()
         
         showView.setup(with: show)
+    }
+}
+
+extension ShowViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return show.genres.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCollectionViewCell.identifier, for: indexPath) as? GenreCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        let genre = show.genres[indexPath.row]
+        
+        cell.setup(with: genre)
+        
+        return cell
     }
 }

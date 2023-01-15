@@ -1,32 +1,31 @@
 //
-//  HomeViewController.swift
+//  SearchViewController.swift
 //  JobsityChallenge
 //
-//  Created by Matheus dos Reis de Jesus on 11/01/23.
+//  Created by Matheus dos Reis de Jesus on 14/01/23.
 //
 
 import Foundation
 import UIKit
 
-final class HomeViewController: UIViewController {
+final class SearchViewController: UIViewController {
     
-    private lazy var homeView: HomeView = {
-        let view = HomeView()
-        
-        view.showsCollectionView.delegate = self
+    private lazy var searchView: SearchView = {
+        let view = SearchView()
         view.showsCollectionView.dataSource = self
+        view.showsCollectionView.delegate = self
+        
+        view.searchController.searchBar.delegate = self
         
         return view
     }()
     
-    private let viewModel: HomeViewModelProtocol
-    
-    init(viewModel: HomeViewModelProtocol) {
+    private let viewModel: SearchViewModelProtocol
+
+    init(viewModel: SearchViewModelProtocol) {
         self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
-        
-        title = "TVMaze"
     }
     
     required init?(coder: NSCoder) {
@@ -34,41 +33,37 @@ final class HomeViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = homeView
+        self.view = searchView
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        title = "Search"
         
-        fetchShows()
-        
-        setupNavigationBar()
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
     
-    private func fetchShows() {
-        viewModel.fetchShows {
-            self.homeView.showsCollectionView.reloadData()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationItem.searchController = searchView.searchController
+    }
+    
+    func search(for text: String) {
+        guard text.count > 3 else { return }
+        
+        viewModel.search(for: text) {
+            self.searchView.showsCollectionView.reloadData()
         }
     }
     
-    private func setupNavigationBar() {
-        let rightItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(openSearch))
-        
-        navigationItem.rightBarButtonItem = rightItem
-        navigationItem.backButtonDisplayMode = .minimal
-    }
-    
-    @objc
-    private func openSearch() {
-        let service = SearchService(network: Network())
-        let viewModel = SearchViewModel(service: service)
-        let controller = SearchViewController(viewModel: viewModel)
-        
-        navigationController?.pushViewController(controller, animated: true)
+    func clearSearch() {
+        viewModel.clearSearch() {
+            self.searchView.showsCollectionView.reloadData()
+        }
     }
 }
 
-extension HomeViewController: UICollectionViewDataSource {
+extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.shows.count
     }
@@ -86,7 +81,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else {
             return .zero
@@ -99,7 +94,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate {
+extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let show = viewModel.shows[indexPath.row]
@@ -107,10 +102,18 @@ extension HomeViewController: UICollectionViewDelegate {
         
         navigationController?.pushViewController(controller, animated: true)
     }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        search(for: searchText)
+    }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.shows.count-1 {
-            fetchShows()
-        }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        search(for: searchBar.text ?? "")
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        clearSearch()
     }
 }
