@@ -49,7 +49,8 @@ extension EpisodeListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Season \(section+1)"
+        let season = Array(viewModel.seasons.keys)[section]
+        return "Season \(season)"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -34,7 +34,7 @@ final class EpisodeListViewModel: EpisodeListViewModelProtocol {
                 return
             }
             
-            self.seasons = Dictionary(grouping: episodes, by: { $0.season})
+            self.seasons = Dictionary(grouping: episodes, by: { $0.season })
             
             DispatchQueue.main.async {
                 completion()
