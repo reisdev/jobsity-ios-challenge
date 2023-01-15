@@ -12,10 +12,29 @@ import Kingfisher
 final class ShowView: UIView {
     
     private struct Metrics {
-        static let posterHeight: CGFloat = 256.0
+        static let posterHeight: CGFloat = 400.0
         static let spacing: CGFloat = 16.0
         static let margin: CGFloat = 24.0
+        static let genreCellHeight: CGFloat = 32.0
     }
+    
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        
+        scrollView.contentInsetAdjustmentBehavior = .never
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        
+        return scrollView
+    }()
+    
+    private lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
     
     private lazy var posterImageView: UIImageView = {
         let imageView = UIImageView()
@@ -30,8 +49,9 @@ final class ShowView: UIView {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
         label.font = .boldSystemFont(ofSize: 32.0)
+        label.textColor = .white
+        label.numberOfLines = 0
         
         return label
     }()
@@ -40,17 +60,36 @@ final class ShowView: UIView {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white.withAlphaComponent(0.6)
-        label.font = .systemFont(ofSize: 16.0)
         label.numberOfLines = 0
         
         return label
+    }()
+    
+    lazy var genreCollectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        
+        flowLayout.minimumLineSpacing = Metrics.spacing
+        flowLayout.minimumInteritemSpacing = Metrics.spacing
+        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.register(GenreCollectionViewCell.self, forCellWithReuseIdentifier: GenreCollectionViewCell.identifier)
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.isScrollEnabled = false
+        collectionView.backgroundColor = .clear
+        
+        return collectionView
     }()
     
     init() {
         super.init(frame: .zero)
         
         setupSubviews()
+        
+        backgroundColor = .black
     }
     
     required init?(coder: NSCoder) {
@@ -58,23 +97,45 @@ final class ShowView: UIView {
     }
     
     private func setupSubviews() {
-        addSubview(posterImageView)
-        addSubview(titleLabel)
-        addSubview(summaryLabel)
+        addSubview(scrollView)
+        
+        scrollView.addSubview(contentView)
+        
+        contentView.addSubview(posterImageView)
+        contentView.addSubview(genreCollectionView)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(summaryLabel)
         
         NSLayoutConstraint.activate([
-            posterImageView.topAnchor.constraint(equalTo: topAnchor),
-            posterImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            posterImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            posterImageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            posterImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            posterImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             posterImageView.heightAnchor.constraint(equalToConstant: Metrics.posterHeight),
-            
+
             titleLabel.topAnchor.constraint(equalTo: posterImageView.bottomAnchor, constant: Metrics.spacing),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.margin),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.margin),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metrics.margin),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Metrics.margin),
             
-            summaryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Metrics.spacing),
-            summaryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.margin),
-            summaryLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.margin)
+            genreCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Metrics.spacing),
+            genreCollectionView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -Metrics.margin),
+            genreCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metrics.margin),
+            genreCollectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: Metrics.genreCellHeight),
+            
+            summaryLabel.topAnchor.constraint(equalTo: genreCollectionView.bottomAnchor, constant: Metrics.spacing),
+            summaryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metrics.margin),
+            summaryLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Metrics.margin),
+            summaryLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
     
@@ -91,7 +152,7 @@ final class ShowView: UIView {
                        color.withAlphaComponent(1.0).cgColor]
         mask.locations = [0.0, 0.7, 1.0]
         
-        posterImageView.layer.addSublayer(mask)
+        posterImageView.layer.insertSublayer(mask, at: 0)
     }
     
     private func setupSummaryText(with summary: String) {
@@ -123,5 +184,7 @@ final class ShowView: UIView {
         posterImageView.kf.setImage(with: URL(string: show.image.original)) { _ in
             self.setupPosterGradient()
         }
+        
+        genreCollectionView.reloadData()
     }
 }
