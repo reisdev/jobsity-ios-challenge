@@ -98,7 +98,9 @@ extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let show = viewModel.shows[indexPath.row]
-        let controller = ShowViewController(show: show)
+
+        let viewModel = ShowViewModel(show: show)
+        let controller = ShowViewController(viewModel: viewModel)
         
         navigationController?.pushViewController(controller, animated: true)
     }

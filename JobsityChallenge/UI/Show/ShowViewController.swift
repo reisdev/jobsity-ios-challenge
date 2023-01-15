@@ -13,13 +13,14 @@ final class ShowViewController: UIViewController {
     private lazy var showView: ShowView = {
         let showView = ShowView()
         showView.genreCollectionView.dataSource = self
+        showView.delegate = self
         return showView
     }()
     
-    private let show: Show
+    private let viewModel: ShowViewModelProtocol
     
-    init(show: Show) {
-        self.show = show
+    init(viewModel: ShowViewModelProtocol) {
+        self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,13 +36,22 @@ final class ShowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showView.setup(with: show)
+        showView.setup(with: viewModel.show)
+    }
+}
+
+extension ShowViewController: ShowViewDelegate {
+    func didTapEpisodesButton() {
+        let service = ShowService(network: Network())
+        let viewModel = EpisodeListViewModel(service: service, show: viewModel.show)
+        let controller = EpisodeListViewController(viewModel: viewModel)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
 extension ShowViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return show.genres.count
+        return viewModel.show.genres.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -50,7 +60,7 @@ extension ShowViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        let genre = show.genres[indexPath.row]
+        let genre = viewModel.show.genres[indexPath.row]
         
         cell.setup(with: genre)
         

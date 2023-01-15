@@ -9,6 +9,7 @@ import Foundation
 
 protocol ShowServiceProtocol {
     func index(page: Int) async throws -> [Show]
+    func episodes(for: Int) async throws -> [Episode]
     func search(for term: String) async throws -> [Show]
 }
 
@@ -27,6 +28,11 @@ final class ShowService: ShowServiceProtocol {
     
     func index(page: Int = 1) async throws -> [Show] {
         guard let url = URL(string: "\(baseUrl)?page=\(page)") else { return [] }
+        return try await network.get(url: url)
+    }
+    
+    func episodes(for id: Int) async throws -> [Episode] {
+        guard let url = URL(string: "\(baseUrl)/\(id)/episodes") else { return [] }
         return try await network.get(url: url)
     }
     

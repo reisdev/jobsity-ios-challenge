@@ -35,6 +35,13 @@
 		CEBB08412973889900B025FA /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB08402973889900B025FA /* SearchView.swift */; };
 		CEBB0843297388FD00B025FA /* ShowsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0842297388FD00B025FA /* ShowsCollectionView.swift */; };
 		CEBB08452973933B00B025FA /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB08442973933B00B025FA /* SearchService.swift */; };
+		CEBB084829739F4700B025FA /* ShowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB084729739F4700B025FA /* ShowViewModel.swift */; };
+		CEBB084D2973A49C00B025FA /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB084C2973A49C00B025FA /* EpisodeListViewController.swift */; };
+		CEBB084F2973A4A700B025FA /* EpisodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB084E2973A4A700B025FA /* EpisodeListView.swift */; };
+		CEBB08512973A55500B025FA /* EpisodeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB08502973A55500B025FA /* EpisodeListViewModel.swift */; };
+		CEBB08532973AFE800B025FA /* EpisodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB08522973AFE800B025FA /* EpisodeDetailView.swift */; };
+		CEBB08552973AFF700B025FA /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB08542973AFF700B025FA /* EpisodeDetailViewController.swift */; };
+		CEBB08572973B00C00B025FA /* EpisodeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB08562973B00C00B025FA /* EpisodeDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +74,13 @@
 		CEBB08402973889900B025FA /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		CEBB0842297388FD00B025FA /* ShowsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsCollectionView.swift; sourceTree = "<group>"; };
 		CEBB08442973933B00B025FA /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		CEBB084729739F4700B025FA /* ShowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewModel.swift; sourceTree = "<group>"; };
+		CEBB084C2973A49C00B025FA /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
+		CEBB084E2973A4A700B025FA /* EpisodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListView.swift; sourceTree = "<group>"; };
+		CEBB08502973A55500B025FA /* EpisodeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewModel.swift; sourceTree = "<group>"; };
+		CEBB08522973AFE800B025FA /* EpisodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailView.swift; sourceTree = "<group>"; };
+		CEBB08542973AFF700B025FA /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		CEBB08562973B00C00B025FA /* EpisodeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,9 +159,9 @@
 		CEBB0808296ED60800B025FA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CEBB08492973A47900B025FA /* Episode */,
 				CEBB083B2973887200B025FA /* Search */,
 				CEBB081F296F0AFF00B025FA /* Components */,
-				CEBB080B296ED6A200B025FA /* Person */,
 				CEBB080A296ED62D00B025FA /* Show */,
 				CEBB0809296ED61600B025FA /* Home */,
 			);
@@ -169,15 +183,9 @@
 			children = (
 				CEBB082A296F73A300B025FA /* ShowView.swift */,
 				CEBB082C296F73AD00B025FA /* ShowViewController.swift */,
+				CEBB084729739F4700B025FA /* ShowViewModel.swift */,
 			);
 			path = Show;
-			sourceTree = "<group>";
-		};
-		CEBB080B296ED6A200B025FA /* Person */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Person;
 			sourceTree = "<group>";
 		};
 		CEBB081A296EE39F00B025FA /* Resources */ = {
@@ -234,6 +242,35 @@
 				CEBB0842297388FD00B025FA /* ShowsCollectionView.swift */,
 			);
 			path = ShowCollectionView;
+			sourceTree = "<group>";
+		};
+		CEBB08492973A47900B025FA /* Episode */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB084B2973A48A00B025FA /* Detail */,
+				CEBB084A2973A48200B025FA /* List */,
+			);
+			path = Episode;
+			sourceTree = "<group>";
+		};
+		CEBB084A2973A48200B025FA /* List */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB084C2973A49C00B025FA /* EpisodeListViewController.swift */,
+				CEBB084E2973A4A700B025FA /* EpisodeListView.swift */,
+				CEBB08502973A55500B025FA /* EpisodeListViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		CEBB084B2973A48A00B025FA /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB08522973AFE800B025FA /* EpisodeDetailView.swift */,
+				CEBB08542973AFF700B025FA /* EpisodeDetailViewController.swift */,
+				CEBB08562973B00C00B025FA /* EpisodeDetailViewModel.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,11 +352,16 @@
 			files = (
 				CEBB083F2973889000B025FA /* SearchViewModel.swift in Sources */,
 				CEBB083829736BD600B025FA /* HomeViewModel.swift in Sources */,
+				CEBB08512973A55500B025FA /* EpisodeListViewModel.swift in Sources */,
+				CEBB084829739F4700B025FA /* ShowViewModel.swift in Sources */,
 				CEBB0819296EDDF600B025FA /* ShowService.swift in Sources */,
+				CEBB08532973AFE800B025FA /* EpisodeDetailView.swift in Sources */,
+				CEBB08572973B00C00B025FA /* EpisodeDetailViewModel.swift in Sources */,
 				CEBB0823296F0C3300B025FA /* HomeView.swift in Sources */,
 				CEBB080F296ED88100B025FA /* Serie.swift in Sources */,
 				CEBB082D296F73AD00B025FA /* ShowViewController.swift in Sources */,
 				CEBB0813296EDB7000B025FA /* Episode.swift in Sources */,
+				CEBB084D2973A49C00B025FA /* EpisodeListViewController.swift in Sources */,
 				CEBB080D296ED6DB00B025FA /* Network.swift in Sources */,
 				CEBB082B296F73A300B025FA /* ShowView.swift in Sources */,
 				CEBB0825296F0D2000B025FA /* HomeViewController.swift in Sources */,
@@ -334,6 +376,8 @@
 				CEBB083D2973888300B025FA /* SearchViewController.swift in Sources */,
 				CEBB0830296F7DD900B025FA /* StringExtension.swift in Sources */,
 				CEBB07F0296ED3D500B025FA /* SceneDelegate.swift in Sources */,
+				CEBB08552973AFF700B025FA /* EpisodeDetailViewController.swift in Sources */,
+				CEBB084F2973A4A700B025FA /* EpisodeListView.swift in Sources */,
 				CEBB08452973933B00B025FA /* SearchService.swift in Sources */,
 				CEBB0832297042D400B025FA /* GenreCollectionViewCell.swift in Sources */,
 				CEBB0817296EDD9400B025FA /* Image.swift in Sources */,

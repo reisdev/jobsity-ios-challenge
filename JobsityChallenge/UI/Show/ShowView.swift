@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 import Kingfisher
 
+protocol ShowViewDelegate: AnyObject {
+    func didTapEpisodesButton()
+}
+
 final class ShowView: UIView {
     
     private struct Metrics {
@@ -21,7 +25,6 @@ final class ShowView: UIView {
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        
         scrollView.contentInsetAdjustmentBehavior = .never
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
@@ -47,19 +50,9 @@ final class ShowView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 32.0)
         label.textColor = .white
-        label.numberOfLines = 0
-        
-        return label
-    }()
-    
-    private lazy var summaryLabel: UILabel = {
-        let label = UILabel()
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         
         return label
@@ -84,6 +77,56 @@ final class ShowView: UIView {
         return collectionView
     }()
     
+    
+    private lazy var summaryLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    private lazy var infoStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = Metrics.spacing
+        
+        return stackView
+    }()
+    
+    private lazy var scheduleInfoTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 18.0)
+        label.text = "Schedule"
+        label.textColor = .white
+        
+        return label
+    }()
+    
+    private lazy var scheduleInfoLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 16.0)
+        label.textColor = .white.withAlphaComponent(0.6)
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    private lazy var episodesButton: UIButton = {
+        let button = UIButton(type: .roundedRect)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("List Episodes", for: .normal)
+        
+        button.addTarget(self, action: #selector(didTapEpisodesButton), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    weak var delegate: ShowViewDelegate?
+    
     init() {
         super.init(frame: .zero)
         
@@ -104,7 +147,13 @@ final class ShowView: UIView {
         contentView.addSubview(posterImageView)
         contentView.addSubview(genreCollectionView)
         contentView.addSubview(titleLabel)
-        contentView.addSubview(summaryLabel)
+        
+        contentView.addSubview(infoStackView)
+        
+        infoStackView.addArrangedSubview(summaryLabel)
+        infoStackView.addArrangedSubview(scheduleInfoTitleLabel)
+        infoStackView.addArrangedSubview(scheduleInfoLabel)
+        infoStackView.addArrangedSubview(episodesButton)
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topAnchor),
@@ -132,11 +181,16 @@ final class ShowView: UIView {
             genreCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metrics.margin),
             genreCollectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: Metrics.genreCellHeight),
             
-            summaryLabel.topAnchor.constraint(equalTo: genreCollectionView.bottomAnchor, constant: Metrics.spacing),
-            summaryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metrics.margin),
-            summaryLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Metrics.margin),
-            summaryLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            infoStackView.topAnchor.constraint(equalTo: genreCollectionView.bottomAnchor, constant: Metrics.spacing),
+            infoStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metrics.margin),
+            infoStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Metrics.margin),
+            infoStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Metrics.margin)
         ])
+    }
+    
+    @objc
+    private func didTapEpisodesButton() {
+        delegate?.didTapEpisodesButton()
     }
     
     private func setupPosterGradient() {
@@ -176,13 +230,27 @@ final class ShowView: UIView {
         summaryLabel.attributedText = summaryText
     }
     
+    private func setupScheduleInfo(with schedule: Schedule) {
+        let formatter = ListFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        let days = formatter.string(from: schedule.days) ?? ""
+        
+        scheduleInfoLabel.text = "\(days) at \(schedule.time)"
+    }
+    
     public func setup(with show: Show) {
         titleLabel.text = show.name
         
         setupSummaryText(with: show.summary)
+        setupScheduleInfo(with: show.schedule)
         
-        posterImageView.kf.setImage(with: URL(string: show.image.original)) { _ in
-            self.setupPosterGradient()
+        posterImageView.kf.setImage(with: URL(string: show.image.original)) { result in
+            switch result {
+            case .success:
+                self.setupPosterGradient()
+            default:
+                return
+            }
         }
         
         genreCollectionView.reloadData()
